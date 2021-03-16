@@ -22,6 +22,8 @@ body
 .game_info  .game_name
 {
   flex: 1;
+  color: #137269;
+  font-weight: bold;
 }
 
 .game_info .game_category
