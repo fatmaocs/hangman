@@ -30,6 +30,9 @@ let wrong_attemps = 0;
 //Get restart game button
 let restart_button = document.querySelector('.restart_button');
 
+//Declare container for category word 
+var word_value;
+
 //Clear Canvas 
 function clear_canvas() {
     context.clearRect(0, 0, canvas.width, canvas.height);
@@ -197,7 +200,7 @@ function get_random_word() {
 
     //Get random word  of random chosen category 
     let random_word_index = Math.floor(Math.random() * category_elements.length);
-    let word_value = category_elements[random_word_index];
+    word_value = category_elements[random_word_index];
 
     //Turn the word to array to generate empty spans to guess letters 
     array_of_word = Array.from(word_value.toLowerCase());
@@ -211,7 +214,6 @@ function get_random_word() {
         guess_container.appendChild(empty_span);
 
     });
-    return word_value;
 }
 
 document.addEventListener('click', (e) => {
@@ -310,4 +312,4 @@ document.addEventListener('click', function (e) {
 
 
 add_alphabet_letters();
-let word_value = get_random_word();
+get_random_word();
